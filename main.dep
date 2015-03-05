@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2414683855</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c</file>
+      <file>$PROJ_DIR$\common\hal_defs.h</file>
+      <file>$PROJ_DIR$\common\hal_int.c</file>
+      <file>$PROJ_DIR$\devices\cc112x_spi.c</file>
+      <file>$PROJ_DIR$\devices\cc112x_spi.h</file>
+      <file>$PROJ_DIR$\interface\hal_acc.h</file>
+      <file>$PROJ_DIR$\common\hal_types.h</file>
+      <file>$PROJ_DIR$\interface\hal_assert.h</file>
+      <file>$PROJ_DIR$\interface\hal_button.h</file>
+      <file>$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_reg_config.h</file>
+      <file>$PROJ_DIR$\common\hal_msp430.h</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F247.xcl</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_int.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430f247.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc112x_spi.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc1120_vchip_easy_link_rx.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc1120_vchip_easy_link_tx.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_board.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc112x_spi.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_board.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_int.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_int_rf_msp_exp430g2.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_msp_exp430g2_spi.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc1120_vchip_easy_link_rx.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\cc1120_vchip_easy_link_tx.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_digio2.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_digio2.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_msp_exp430g2_spi.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_int_rf_msp_exp430g2.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbd</file>
+      <file>$PROJ_DIR$\Debug\Exe\main.d43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$PROJ_DIR$\interface\hal_lcd_srf04.h</file>
+      <file>$PROJ_DIR$\interface\hal_uart.h</file>
+      <file>$PROJ_DIR$\interface\hal_wait.h</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_board.h</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_digio2.c</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_int_rf_msp_exp430g2.c</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_msp_exp430g2_spi.c</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_msp_exp430g2_spi.h</file>
+      <file>$PROJ_DIR$\interface\hal_potmeter.h</file>
+      <file>$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_rx.c</file>
+      <file>$PROJ_DIR$\interface\hal_lcd.h</file>
+      <file>$PROJ_DIR$\interface\hal_rf_util.h</file>
+      <file>$PROJ_DIR$\interface\hal_timer_32k.h</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_board.c</file>
+      <file>$PROJ_DIR$\interface\hal_digio2.h</file>
+      <file>$PROJ_DIR$\interface\hal_timer.h</file>
+      <file>$PROJ_DIR$\interface\hal_joystick.h</file>
+      <file>$PROJ_DIR$\interface\hal_mcu.h</file>
+      <file>$PROJ_DIR$\interface\hal_rf.h</file>
+      <file>$PROJ_DIR$\msp_exp430g2\hal_int_rf_msp_exp430g2.h</file>
+      <file>$PROJ_DIR$\interface\hal_led.h</file>
+      <file>$PROJ_DIR$\interface\hal_int.h</file>
+      <file>$PROJ_DIR$\interface\hal_lightsensor.h</file>
+      <file>$PROJ_DIR$\interface\hal_rf_security.h</file>
+      <file>$PROJ_DIR$\interface\hal_digio.h</file>
+      <file>$PROJ_DIR$\interface\hal_lcd_sblcda4.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 48 6 4 52 1 64 59 69 9 42 39 16 27 26 36 33 30 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 48 6 4 52 1 64 59 69 9 42 39 16 27 36 33 30 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\common\hal_int.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 6 1 66 38 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 1 66 38 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\devices\cc112x_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 6 4 52 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 4 52 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\main.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 19 15 22 31 23 37 25</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\main.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 11 34 29 21 20 32 13 24 35 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp_exp430g2\hal_digio2.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 6 1 48 66 69 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 6 1 48 66 69 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp_exp430g2\hal_int_rf_msp_exp430g2.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 6 1 64 59 69 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 6 1 64 59 69 52</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp_exp430g2\hal_msp_exp430g2_spi.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 52 6 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 52 6 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_rx.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 48 6 4 52 1 64 59 69 9 42 39 16 27 26 36 33 30 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 48 6 4 52 1 64 59 69 9 42 39 16 27 36 33 30 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp_exp430g2\hal_board.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 14 44 38 48 6 59 1 69</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 14 44 38 48 6 59 1 69</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

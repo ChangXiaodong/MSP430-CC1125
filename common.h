@@ -1,0 +1,8 @@
+#include "msp430.h"
+#include "hal_board.h"
+#include "cc112x_spi.h"
+#include "hal_int_rf_msp_exp430g2.h"
+#include "cc1120_vchip_easy_link_reg_config.h"
+#include "stdlib.h"
+#include "hal_types.h"
+#include "hal_defs.h" 
