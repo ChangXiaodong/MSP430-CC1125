@@ -63,8 +63,8 @@ static uint32 packetCounter;
 /******************************************************************************
 * STATIC FUNCTIONS
 */
-static void txregisterConfig(void);
-static void runTX(void);
+static void registerConfig(void);
+static void runRX(void);
 static void createPacket(uint8 txBuffer[]);
 static void radioRxTxISR(void);
 static void manualCalibration(void);
@@ -116,34 +116,19 @@ void main(void)
 //  
 //  }
   // write radio registers
-  txregisterConfig();
-  /*write = 0xB0;
-  cc112xSpiWriteReg( CC112X_IOCFG0, &write, 1);
-  cc112xSpiReadReg(CC112X_IOCFG0, &buffer[0], 1);
-  write = 0x06;
-  cc112xSpiWriteReg( CC112X_SYNC_CFG1, &write, 1);
-  cc112xSpiReadReg(CC112X_SYNC_CFG1, &buffer[1], 1);
-  write = 0xB0;
-  cc112xSpiWriteReg( CC112X_DEVIATION_M, &write, 1);
-  cc112xSpiReadReg(CC112X_DEVIATION_M, &buffer[2], 1);
-  write = 0xB0;
-  cc112xSpiWriteReg( CC112X_MODCFG_DEV_E, &write, 1);
-  cc112xSpiReadReg(CC112X_MODCFG_DEV_E, &buffer[3], 1);
-  write = 0xA9;
-  cc112xSpiWriteReg( CC112X_DCFILT_CFG, &write, 1);
-  cc112xSpiReadReg(CC112X_DCFILT_CFG, &buffer[4], 1);
-  write = 0xCF;
-  cc112xSpiWriteReg( CC112X_FREQ_IF_CFG, &write, 1);
-  cc112xSpiReadReg(CC112X_FREQ_IF_CFG, &buffer[5], 1);*/
+  registerConfig();
   
   /*cc112xSpiReadReg(CC112X_IOCFG3, &buffer[0], 1);
   cc112xSpiReadReg(CC112X_IOCFG2, &buffer[1], 1);
   cc112xSpiReadReg(CC112X_IOCFG1, &buffer[2], 1);
   cc112xSpiReadReg(CC112X_IOCFG0, &buffer[3], 1);
-  cc112xSpiReadReg(CC112X_SYNC_CFG1, &buffer[4], 1);
-  cc112xSpiReadReg(CC112X_DCFILT_CFG, &buffer[5], 1);*/
+  cc112xSpiReadReg(CC112X_SYNC3, &buffer[4], 1);
+  cc112xSpiReadReg(CC112X_SYNC2, &buffer[5], 1);*/
+  
+  
+  
   // run either TX or RX dependent of build define  
-  runTX();
+  runRX();
  
 }
 /******************************************************************************
@@ -156,21 +141,28 @@ void main(void)
  *
  * @return      none
  */
-uint8 test_buffer[10];
-
-static void runTX(void)
+uint8 rxBuffer[128] = {0};
+uint8 rxBytes;
+uint8 marcStatus;
+static void runRX(void)
 {
-  
+
   manualCalibration(); 
-  for(int i=0;i<10;i++)
-    test_buffer[i]=i;
+  trxSpiCmdStrobe(CC112X_SRX);
   // infinite loop
   while(TRUE)
   {
-    cc112xSpiWriteTxFifo(test_buffer,10);
-    trxSpiCmdStrobe(CC112X_STX);
-    
-    for(uint16 j=0;j<60000;j++)
+    cc112xSpiReadReg(CC112X_NUM_RXBYTES, &rxBytes, 1);
+    cc112xSpiReadRxFifo(rxBuffer, 10);
+    trxSpiCmdStrobe(CC112X_SRX);
+    if(rxBytes!=0)
+    {
+        while(1)
+        {
+            NOP();
+        }
+    }
+    for(int j=0;j<20000;j++)
       NOP();
   }
 }
@@ -200,7 +192,7 @@ static void radioRxTxISR(void) {
 *
 * @return      none
 */
-static void txregisterConfig(void) {
+static void registerConfig(void) {
   uint8 writeByte;
   
   // reset radio
