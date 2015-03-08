@@ -118,12 +118,12 @@ void main(void)
   // write radio registers
   registerConfig();
   
-  /*cc112xSpiReadReg(CC112X_IOCFG3, &buffer[0], 1);
+  cc112xSpiReadReg(CC112X_IOCFG3, &buffer[0], 1);
   cc112xSpiReadReg(CC112X_IOCFG2, &buffer[1], 1);
   cc112xSpiReadReg(CC112X_IOCFG1, &buffer[2], 1);
   cc112xSpiReadReg(CC112X_IOCFG0, &buffer[3], 1);
   cc112xSpiReadReg(CC112X_SYNC3, &buffer[4], 1);
-  cc112xSpiReadReg(CC112X_SYNC2, &buffer[5], 1);*/
+  cc112xSpiReadReg(CC112X_SYNC2, &buffer[5], 1);
   
   
   
@@ -144,27 +144,54 @@ void main(void)
 uint8 rxBuffer[128] = {0};
 uint8 rxBytes;
 uint8 marcStatus;
+uint8 status = 0;
+uint8 test_buffer[128] = {0};
+uint8 rssi = 0;
+uint8 status1[5];
 static void runRX(void)
 {
-
+  //status = trxSpiCmdStrobe(CC112X_SNOP);
   manualCalibration(); 
   trxSpiCmdStrobe(CC112X_SRX);
+  cc112xSpiReadReg(CC112X_RSSI1,&rssi,1);
+  cc112xSpiReadReg(CC112X_MARCSTATE,&status1[0],1);
+  //status = trxSpiCmdStrobe(CC112X_SNOP);
   // infinite loop
   while(TRUE)
   {
     cc112xSpiReadReg(CC112X_NUM_RXBYTES, &rxBytes, 1);
-    cc112xSpiReadRxFifo(rxBuffer, 10);
+    //cc112xSpiReadReg(CC112X_RSSI1,&rssi,1);
+    //cc112xSpiReadReg(CC112X_MARCSTATE,&status1[1],1);
+    //cc112xSpiReadRxFifo(rxBuffer, 10);
     trxSpiCmdStrobe(CC112X_SRX);
+    //status = trxSpiCmdStrobe(CC112X_SNOP);
+    //cc112xSpiReadReg(CC112X_MARCSTATE,&status1[2],1);
     if(rxBytes!=0)
     {
-        while(1)
-        {
-            NOP();
-        }
+        cc112xSpiReadRxFifo(rxBuffer, 10);  
+        
     }
     for(int j=0;j<20000;j++)
       NOP();
   }
+  /*status = trxSpiCmdStrobe(CC112X_SNOP);
+  manualCalibration();
+  for(uint16 j=0;j<60000;j++)
+      NOP();
+  for(int i=0;i<10;i++)
+    test_buffer[i]=i;
+  // infinite loop
+  trxSpiCmdStrobe(CC112X_STX);
+  status = trxSpiCmdStrobe(CC112X_SNOP);
+  while(TRUE)
+  {
+    cc112xSpiWriteTxFifo(test_buffer,10);
+    trxSpiCmdStrobe(CC112X_STX);
+    status = trxSpiCmdStrobe(CC112X_SNOP);
+    for(uint16 j=0;j<60000;j++)
+      NOP();
+    trxSpiCmdStrobe(CC112X_STX);
+  }*/
 }
 /*******************************************************************************
 * @fn          radioRxTxISR

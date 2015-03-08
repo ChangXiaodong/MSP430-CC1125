@@ -157,21 +157,26 @@ void main(void)
  * @return      none
  */
 uint8 test_buffer[10];
-
+uint8 status = 0;
 static void runTX(void)
 {
-  
-  manualCalibration(); 
+  status = trxSpiCmdStrobe(CC112X_SNOP);
+  manualCalibration();
+  for(uint16 j=0;j<60000;j++)
+      NOP();
   for(int i=0;i<10;i++)
     test_buffer[i]=i;
   // infinite loop
+  trxSpiCmdStrobe(CC112X_STX);
+  status = trxSpiCmdStrobe(CC112X_SNOP);
   while(TRUE)
   {
     cc112xSpiWriteTxFifo(test_buffer,10);
     trxSpiCmdStrobe(CC112X_STX);
-    
+    status = trxSpiCmdStrobe(CC112X_SNOP);
     for(uint16 j=0;j<60000;j++)
       NOP();
+    trxSpiCmdStrobe(CC112X_STX);
   }
 }
 /*******************************************************************************

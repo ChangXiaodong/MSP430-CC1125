@@ -36,27 +36,39 @@ Control Register=0
 NextState0=0
 NextState1=0
 [Action Register]
-Break=5
-State Storage=5
+Break=4
+State Storage=4
 [DebugChecksum]
-Checksum=806144925
+Checksum=840318312
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
 [watch_formats]
 Fmt0={W}0:test	4	0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c}.297.5" 0 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_rx.c}.131.3" 0 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_rx.c}.158.5" 1 0 0 0 "" 0 ""
-Count=3
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c}.313.5" 0 0 0 0 "" 0 ""
+Count=1
 [FET]
 Clock mode=14
 Extended Clock mode=-1
 Secure Password=
 Extended Clock Control Enable=1
-Advanced Extended Clock Control=1
+Advanced Extended Clock Control=0
 Emulation mode=0
 Free running=0
 Shutting Down=3
@@ -71,21 +83,10 @@ SP=0
 SR=0
 all registers=0
 File name=
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 A0=_ "F:\247\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c" "F:\MSP430_CC1125_Git\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c"
-Count=1
+A1=_ "F:\MSP430_CC1125_Git\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c" "F:\MSP430_CC1125\MSP430_CC1125_Git(5.3)\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c"
+A2=_ "F:\MSP430_CC1125_Git\msp_exp430g2\hal_digio2.c" "F:\MSP430_CC1125\MSP430_CC1125_Git(5.3)\msp_exp430g2\hal_digio2.c"
+A3=_ "F:\MSP430_CC1125_Git\msp_exp430g2\hal_msp_exp430g2_spi.c" "F:\MSP430_CC1125\MSP430_CC1125_Git(5.3)\msp_exp430g2\hal_msp_exp430g2_spi.c"
+Count=4
 SuppressDialog=1
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=0
-Graph=0
-Symbiont=0
