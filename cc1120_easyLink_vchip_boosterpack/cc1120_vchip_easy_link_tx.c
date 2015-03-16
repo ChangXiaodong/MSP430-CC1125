@@ -43,6 +43,7 @@
 #include "hal_int_rf_msp_exp430g2.h"
 #include "cc1120_vchip_easy_link_reg_config.h"
 #include "stdlib.h"
+#include "hal_uart.h"
 /******************************************************************************
  * CONSTANTS
  */ 
@@ -165,7 +166,7 @@ static void runTX(void)
   for(uint16 j=0;j<60000;j++)
       NOP();
   for(int i=0;i<10;i++)
-    test_buffer[i]=i;
+    test_buffer[i]=i+1;
   // infinite loop
   trxSpiCmdStrobe(CC112X_STX);
   status = trxSpiCmdStrobe(CC112X_SNOP);

@@ -3823,6 +3823,9 @@
     <file>
       <name>$PROJ_DIR$\devices\cc112x_spi.h</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\devices\uart.c</name>
+    </file>
   </group>
   <group>
     <name>interface</name>

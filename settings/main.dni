@@ -36,20 +36,16 @@ Control Register=0
 NextState0=0
 NextState1=0
 [Action Register]
-Break=4
-State Storage=4
+Break=6
+State Storage=6
 [DebugChecksum]
-Checksum=840318312
+Checksum=1940786025
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
 [watch_formats]
 Fmt0={W}0:test	4	0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -60,8 +56,12 @@ Enabled=0
 Mode=0
 Graph=0
 Symbiont=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c}.313.5" 0 0 0 0 "" 0 ""
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\cc1120_easyLink_vchip_boosterpack\cc1120_vchip_easy_link_tx.c}.314.5" 0 0 0 0 "" 0 ""
 Count=1
 [FET]
 Clock mode=14

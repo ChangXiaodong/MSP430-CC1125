@@ -52,6 +52,7 @@
 */
 #define ISR_ACTION_REQUIRED 1
 #define ISR_IDLE            0
+#define RX_FIFO_ERROR       0x11
 
 #define PKTLEN              5
 /******************************************************************************
@@ -87,6 +88,7 @@ void main(void)
 {
   //init MCU
   halInitMCU();
+  Uart_init();
   //init LEDs
   //halLedInit();
   //init button
@@ -165,33 +167,21 @@ static void runRX(void)
     //cc112xSpiReadRxFifo(rxBuffer, 10);
     trxSpiCmdStrobe(CC112X_SRX);
     //status = trxSpiCmdStrobe(CC112X_SNOP);
-    //cc112xSpiReadReg(CC112X_MARCSTATE,&status1[2],1);
+    cc112xSpiReadReg(CC112X_MARCSTATE,&status1[2],1);
     if(rxBytes!=0)
     {
-        cc112xSpiReadRxFifo(rxBuffer, 10);  
-        
+        cc112xSpiReadRxFifo(rxBuffer, rxBytes);  
+        Uart_Write(rxBuffer,rxBytes);
     }
+    
+    if((status1[2] & 0x1F) == RX_FIFO_ERROR){
+          
+          // Flush RX Fifo
+          trxSpiCmdStrobe(CC112X_SFRX);
+     }
     for(int j=0;j<20000;j++)
       NOP();
   }
-  /*status = trxSpiCmdStrobe(CC112X_SNOP);
-  manualCalibration();
-  for(uint16 j=0;j<60000;j++)
-      NOP();
-  for(int i=0;i<10;i++)
-    test_buffer[i]=i;
-  // infinite loop
-  trxSpiCmdStrobe(CC112X_STX);
-  status = trxSpiCmdStrobe(CC112X_SNOP);
-  while(TRUE)
-  {
-    cc112xSpiWriteTxFifo(test_buffer,10);
-    trxSpiCmdStrobe(CC112X_STX);
-    status = trxSpiCmdStrobe(CC112X_SNOP);
-    for(uint16 j=0;j<60000;j++)
-      NOP();
-    trxSpiCmdStrobe(CC112X_STX);
-  }*/
 }
 /*******************************************************************************
 * @fn          radioRxTxISR

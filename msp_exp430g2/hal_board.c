@@ -55,6 +55,15 @@ void halInitMCU(void)
   TC_RST_dIR |= TC_RST_EN;                          
   TC_RST_OUT |= TC_RST_EN;
   
+  VCC_FETR_DIR |= VCC_FETR_EN;                          
+  VCC_FETR_OUT |= VCC_FETR_EN;
+  
+  VCC_FEEN_DIR |= VCC_FEEN_EN;                          
+  VCC_FEEN_OUT |= VCC_FEEN_EN;
+  
+  VCC_FERYP_DIR |= VCC_FERYP_EN;                          
+  VCC_FERYP_OUT &= ~VCC_FERYP_EN;
+  
   // Enable global interrupt
   _BIS_SR(GIE);
 }

@@ -16,7 +16,9 @@ extern "C" {
  * INCLUDES
  */
 #include "hal_types.h"
-  
+extern uint8 UartRxGetByte(void);
+extern void Uart_init();
+extern uint8 Uart_Write(uint8* buf, uint8 length);
   
 // #ifdef MSP_EXP430G2
   #include "hal_msp_exp430g2_spi.h"

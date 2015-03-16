@@ -55,6 +55,18 @@ extern "C" {
 #define     TC_RST_OUT      P1OUT
 #define     TC_RST_EN       BIT0
   
+#define     VCC_FETR_DIR     P1DIR
+#define     VCC_FETR_OUT     P1OUT
+#define     VCC_FETR_EN      BIT4
+  
+#define     VCC_FEEN_DIR     P1DIR
+#define     VCC_FEEN_OUT     P1OUT
+#define     VCC_FEEN_EN      BIT5
+  
+#define     VCC_FERYP_DIR     P1DIR
+#define     VCC_FERYP_OUT     P1OUT
+#define     VCC_FERYP_EN      BIT6
+  
 
 /******************************************************************************
  * FUNCTIONS
