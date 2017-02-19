@@ -1,4 +1,4 @@
-# MSP430_CC1125_Git
+# CC1125 Device Drive for MSO430
 For IAR 5.3 
-Basic driver to CC1125.Modifed from offical program reference.
+Basic driver of CC1125.Reference to offical program.
 spi,RF,is tested.
